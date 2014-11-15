@@ -19,24 +19,34 @@ Route::get('/', function()
 	// {
 	//     var_dump($user->name);
 	// }
-	return View::make('admin3/index');
+	return View::make('admin3.index');
 });
 
-Route::get('hello', function()
+Route::get('dashboard', function()
 {
-	//return View::make('hello');
-	return Redirect::to('admin3js');
-});
-
-Route::get('users', function()
-{
-    return View::make('users');
+	return View::make('admin3.dashboard');
 });
 
 Route::get('home', function()
 {
-	return Redirect::to('frontend/index.html');
+	return View::make('page.home');
 });
+
+Route::get('first', function()
+{
+	return View::make('layouts.first');
+});
+
+Route::get('hello', function()
+{
+	return View::make('layouts.hello');
+});
+
+Route::get('users', function()
+{
+    return View::make('layouts/users');
+});
+
 
 Route::get('admin3h', function()
 {
@@ -47,8 +57,6 @@ Route::get('admin3js', function()
 {
     return View::make('admin3/angularjs/index');
 });
-
-
 
 Route::get('ecommerce_index', function()
 {
