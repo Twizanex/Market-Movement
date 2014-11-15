@@ -13,5 +13,45 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	// $users = DB::table('user')->get();
+
+	// foreach ($users as $user)
+	// {
+	//     var_dump($user->name);
+	// }
+	return View::make('admin3/index');
 });
+
+Route::get('hello', function()
+{
+	//return View::make('hello');
+	return Redirect::to('admin3js');
+});
+
+Route::get('users', function()
+{
+    return View::make('users');
+});
+
+Route::get('home', function()
+{
+	return Redirect::to('frontend/index.html');
+});
+
+Route::get('admin3h', function()
+{
+    return Redirect::to('admin3/index.html');
+});
+
+Route::get('admin3js', function()
+{
+    return View::make('admin3/angularjs/index');
+});
+
+
+
+Route::get('ecommerce_index', function()
+{
+    return View::make('admin3/ecommerce_index');
+});
+
