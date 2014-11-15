@@ -88,3 +88,10 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+
+App::missing(function() {
+    return Response::make(View::make('page.404_option1'), 404);
+});
+
+

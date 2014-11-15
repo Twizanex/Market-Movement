@@ -10,6 +10,9 @@
 
 
 @section('content')
+<div class="row">
+	<div class="col-md-12">
+
 	i am the home page
 	<?php
 	$users = DB::table('user')->get();
@@ -19,5 +22,7 @@
 	    var_dump($user->name);
 	}
 	?>
+	</div>
+</div>
 @stop
 

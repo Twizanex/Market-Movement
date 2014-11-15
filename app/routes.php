@@ -32,6 +32,16 @@ Route::get('home', function()
 	return View::make('page.home');
 });
 
+Route::get('contact', function()
+{
+	return View::make('page.contact');
+});
+
+Route::get('demo', function()
+{
+	return View::make('page.demo');
+});
+
 Route::get('first', function()
 {
 	return View::make('layouts.first');

@@ -15,14 +15,3 @@
 <script src="../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
 <script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
-<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
-<script src="../../assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
-<script src="../../assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
-<script>
-      jQuery(document).ready(function() {    
-         Metronic.init(); // init metronic core components
-Layout.init(); // init current layout
-Demo.init(); // init demo features
-      });
-   </script>
-<!-- END JAVASCRIPTS -->
