@@ -37,6 +37,11 @@ Route::get('contact', function()
 	return View::make('page.contact');
 });
 
+Route::get('stock', function()
+{
+	return View::make('page.stock');
+});
+
 Route::get('demo', function()
 {
 	return View::make('page.demo');
