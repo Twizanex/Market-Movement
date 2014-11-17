@@ -1,11 +1,11 @@
 @extends('layouts.default')
 
 @section('title')
-	Home
+	Contact
 @stop
 
 @section('subtitle')
-	Welcome Home!
+	
 @stop
 
 
