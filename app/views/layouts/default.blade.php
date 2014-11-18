@@ -3,6 +3,7 @@
 
 <head>
 	@include('includes.head')
+	@yield('link')
 </head>
 
 <body>
