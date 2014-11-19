@@ -8,6 +8,10 @@
 	Welcome Home!
 @stop
 
+@section('link')
+
+@stop
+
 
 @section('content')
 <div class="row">
