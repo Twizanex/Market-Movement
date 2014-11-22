@@ -52,6 +52,11 @@ Route::get('watchlist_edit', function()
 	return View::make('page.watchlist_edit');
 });
 
+Route::get('login', function()
+{
+	return View::make('page.login');
+});
+
 Route::get('demo', function()
 {
 	return View::make('page.demo');

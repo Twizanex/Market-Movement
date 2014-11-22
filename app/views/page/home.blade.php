@@ -1,15 +1,14 @@
 @extends('layouts.default')
 
 @section('title')
-	Home
+	Login
 @stop
 
 @section('subtitle')
-	Welcome Home!
+	Login to your account!
 @stop
 
 @section('link')
-
 @stop
 
 
