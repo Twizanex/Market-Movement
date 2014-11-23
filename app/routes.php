@@ -23,7 +23,11 @@ Route::get('/', function()
 });
 
 Route::get('dashboard', function()
-{
+{	
+	// $data = Session::all();
+	// Session::put('apple', '2000');
+	// var_dump($data);
+	// echo '<pre>'.print_r($data).'</pre>';
 	return View::make('admin3.dashboard');
 });
 
@@ -55,6 +59,14 @@ Route::get('watchlist_edit', function()
 Route::get('login', function()
 {
 	return View::make('page.login');
+});
+
+Route::post('login_verify', function()
+{
+	//$data = Session::all();
+	//var_dump($data);
+	var_dump($_REQUEST);
+	//echo 'what';
 });
 
 Route::get('demo', function()
