@@ -78,35 +78,6 @@
 							</tr>
 							</thead>
 							<tbody>
-							<tr>
-								<td class='code'>
-									 FB
-								</td>
-								<td>
-									 ARDENT LEISURE GROUP
-								</td>
-								<td class="numeric">
-									 $1.15
-								</td>
-								<td class="numeric">
-									 +0.02
-								</td>
-								<td class="numeric">
-									 1.32%
-								</td>
-								<td class="numeric">
-									 $1.14
-								</td>
-								<td class="numeric">
-									 $1.15
-								</td>
-								<td class="numeric">
-									 $1.13
-								</td>
-								<td class="numeric">
-									 56,431
-								</td>
-							</tr>
 							<?php
 								$data = DB::table('list_data')->get();
 
@@ -114,7 +85,7 @@
 								{
 									echo '<tr>';
 									echo '<td class="code">'.$row->stock.'</td>';
-									echo '<td class="code">'.$row->stock.'</td>';
+									echo '<td></td>';
 									echo '<td class="numeric">0</td>';
 									echo '<td class="numeric">0</td>';
 									echo '<td class="numeric">0</td>';
@@ -166,7 +137,17 @@ $(document).ready(function() {
 	    $.getJSON(url, 'q=' + data + "&format=json&diagnostics=true&env=http://datatables.org/alltables.env")
 	        .done(function (data) {
 	        //output(JSON.stringify(data.query.results.quote, undefined, 2));
-	        $( ".code:eq(" + index + ")" ).next().html(data.query.results.quote.LastTradePriceOnly);
+	        $( ".code:eq(" + index + ")" ).next().html(data.query.results.quote.Name);
+	        $( ".code:eq(" + index + ")" ).next().next().html(data.query.results.quote.LastTradePriceOnly);
+	        $( ".code:eq(" + index + ")" ).next().next().next().html(data.query.results.quote.Change);
+	        $( ".code:eq(" + index + ")" ).next().next().next().next().html(data.query.results.quote.ChangeinPercent);
+	        $( ".code:eq(" + index + ")" ).next().next().next().next().next().html(data.query.results.quote.Open);
+	        $( ".code:eq(" + index + ")" ).next().next().next().next().next().next().html(data.query.results.quote.DaysHigh);
+	        $( ".code:eq(" + index + ")" ).next().next().next().next().next().next().next().html(data.query.results.quote.DaysLow);
+	        $( ".code:eq(" + index + ")" ).next().next().next().next().next().next().next().next().html(data.query.results.quote.Volume);
+
+	    	//output(JSON.stringify(data.query.results.quote, undefined, 2));
+	    	console.log(JSON.stringify(data.query.results.quote,  undefined, 2));
 	    })
 	        .fail(function (jqxhr, textStatus, error) {
 	        var err = textStatus + ", " + error;
