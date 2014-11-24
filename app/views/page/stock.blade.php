@@ -171,31 +171,28 @@
 <script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="../../assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
 <script src="../../assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
-<script src="../../assets/admin/pages/scripts/table-advanced.js"></script>jg
+<script src="../../assets/admin/pages/scripts/table-advanced.js"></script>
 <script>
 $(document).ready(function() {
 
 	$('.code').each(function( index ) {
-	  console.log( index + ": " + $( this ).text() );
-	  $(this).next().html('test' + index);
+
+		var url = "http://query.yahooapis.com/v1/public/yql";
+	    // var symbol = $("#symbol").val();
+	    var symbol = $( this ).text();
+
+	    var data = encodeURIComponent("select * from yahoo.finance.quotes where symbol in ('" + symbol + "')");
+
+	    $.getJSON(url, 'q=' + data + "&format=json&diagnostics=true&env=http://datatables.org/alltables.env")
+	        .done(function (data) {
+	        //output(JSON.stringify(data.query.results.quote, undefined, 2));
+	        $( ".code:eq(" + index + ")" ).next().html(data.query.results.quote.LastTradePriceOnly);
+	    })
+	        .fail(function (jqxhr, textStatus, error) {
+	        var err = textStatus + ", " + error;
+	            $("#result").text('Request failed: ' + err);
+	    });
 	});
-
-
-	// var url = "http://query.yahooapis.com/v1/public/yql";
-	//     // var symbol = $("#symbol").val();
-	//     var symbol = 'tsla';
-
-	//     var data = encodeURIComponent("select * from yahoo.finance.quotes where symbol in ('" + symbol + "')");
-
-	//     $.getJSON(url, 'q=' + data + "&format=json&diagnostics=true&env=http://datatables.org/alltables.env")
-	//         .done(function (data) {
-	//         //$("#result").text("Bid Price: " + data.query.results.quote.LastTradePriceOnly);
-	//         output(JSON.stringify(data.query.results.quote, undefined, 2));
-	//     })
-	//         .fail(function (jqxhr, textStatus, error) {
-	//         var err = textStatus + ", " + error;
-	//             $("#result").text('Request failed: ' + err);
-	//     });
 
 
     $('#example').dataTable( {
