@@ -80,35 +80,6 @@
 							<tbody>
 							<tr>
 								<td class='code'>
-									 AAC
-								</td>
-								<td>
-									 AUSTRALIAN AGRICULTURAL COMPANY LIMITED.
-								</td>
-								<td class="numeric">
-									 &nbsp;
-								</td>
-								<td class="numeric">
-									 -0.01
-								</td>
-								<td class="numeric">
-									 -0.36%
-								</td>
-								<td class="numeric">
-									 $1.39
-								</td>
-								<td class="numeric">
-									 $1.39
-								</td>
-								<td class="numeric">
-									 &nbsp;
-								</td>
-								<td class="numeric">
-									 9,395
-								</td>
-							</tr>
-							<tr>
-								<td class='code'>
 									 FB
 								</td>
 								<td>
@@ -136,16 +107,25 @@
 									 56,431
 								</td>
 							</tr>
-							<!-- 
 							<?php
 								$data = DB::table('list_data')->get();
 
 								foreach ($data as $row)
 								{
-								    var_dump($row->stock);
+									echo '<tr>';
+									echo '<td class="code">'.$row->stock.'</td>';
+									echo '<td class="code">'.$row->stock.'</td>';
+									echo '<td class="numeric">0</td>';
+									echo '<td class="numeric">0</td>';
+									echo '<td class="numeric">0</td>';
+									echo '<td class="numeric">0</td>';
+									echo '<td class="numeric">0</td>';
+									echo '<td class="numeric">0</td>';
+									echo '<td class="numeric">0</td>';
+									echo '</tr>';
+
 								}
 							?>
-							-->
 							</tbody>
 							</table>
 						</div>
