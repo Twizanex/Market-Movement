@@ -79,7 +79,7 @@
 							</thead>
 							<tbody>
 							<tr>
-								<td>
+								<td class='code'>
 									 AAC
 								</td>
 								<td>
@@ -108,8 +108,8 @@
 								</td>
 							</tr>
 							<tr>
-								<td>
-									 AAD
+								<td class='code'>
+									 FB
 								</td>
 								<td>
 									 ARDENT LEISURE GROUP
@@ -136,6 +136,16 @@
 									 56,431
 								</td>
 							</tr>
+							<!-- 
+							<?php
+								$data = DB::table('list_data')->get();
+
+								foreach ($data as $row)
+								{
+								    var_dump($row->stock);
+								}
+							?>
+							-->
 							</tbody>
 							</table>
 						</div>
@@ -164,6 +174,30 @@
 <script src="../../assets/admin/pages/scripts/table-advanced.js"></script>jg
 <script>
 $(document).ready(function() {
+
+	$('.code').each(function( index ) {
+	  console.log( index + ": " + $( this ).text() );
+	  $(this).next().html('test' + index);
+	});
+
+
+	// var url = "http://query.yahooapis.com/v1/public/yql";
+	//     // var symbol = $("#symbol").val();
+	//     var symbol = 'tsla';
+
+	//     var data = encodeURIComponent("select * from yahoo.finance.quotes where symbol in ('" + symbol + "')");
+
+	//     $.getJSON(url, 'q=' + data + "&format=json&diagnostics=true&env=http://datatables.org/alltables.env")
+	//         .done(function (data) {
+	//         //$("#result").text("Bid Price: " + data.query.results.quote.LastTradePriceOnly);
+	//         output(JSON.stringify(data.query.results.quote, undefined, 2));
+	//     })
+	//         .fail(function (jqxhr, textStatus, error) {
+	//         var err = textStatus + ", " + error;
+	//             $("#result").text('Request failed: ' + err);
+	//     });
+
+
     $('#example').dataTable( {
         "order": [[ 3, "desc" ]]
     } );
@@ -172,13 +206,10 @@ $(document).ready(function() {
 jQuery(document).ready(function() {       
    // initiate layout and plugins
    Metronic.init(); // init metronic core components
-Layout.init(); // init current layout
-Demo.init(); // init demo features
-TableAdvanced.init();
+   Layout.init(); // init current layout
+   Demo.init(); // init demo features
+   TableAdvanced.init();
+} );
 
-$('#example').dataTable( {
-        "order": [[ 3, "desc" ]]
-    } );
-});
 </script>
 @stop
