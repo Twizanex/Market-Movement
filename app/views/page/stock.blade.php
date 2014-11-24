@@ -8,6 +8,14 @@
 	Panel
 @stop
 
+@section('link')
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/select2/select2.css"/>
+<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css"/>
+<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css"/>
+<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+<!-- END PAGE LEVEL STYLES -->
+@stop
 
 @section('content')
 <!-- BEGIN PAGE CONTENT INNER -->
@@ -37,7 +45,7 @@
 							</div>
 						</div>
 						<div class="portlet-body flip-scroll">
-							<table class="table table-bordered table-striped table-condensed flip-content">
+							<table class="table table-bordered table-striped table-condensed table-hover" id="example">
 							<thead class="flip-content">
 							<tr>
 								<th width="20%">
@@ -511,15 +519,36 @@
 
 @section('script')
 
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="../../assets/global/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+
 <script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
 <script src="../../assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
 <script src="../../assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
+<script src="../../assets/admin/pages/scripts/table-advanced.js"></script>jg
 <script>
+$(document).ready(function() {
+    $('#example').dataTable( {
+        "order": [[ 3, "desc" ]]
+    } );
+} );
+
 jQuery(document).ready(function() {       
    // initiate layout and plugins
    Metronic.init(); // init metronic core components
 Layout.init(); // init current layout
 Demo.init(); // init demo features
+TableAdvanced.init();
+
+$('#example').dataTable( {
+        "order": [[ 3, "desc" ]]
+    } );
 });
 </script>
 @stop
