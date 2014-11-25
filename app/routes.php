@@ -69,6 +69,11 @@ Route::post('login_verify', function()
 	//echo 'what';
 });
 
+Route::post('register', function()
+{
+	var_dump($_REQUEST);
+});
+
 Route::get('demo', function()
 {
 	return View::make('page.demo');
