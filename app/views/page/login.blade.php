@@ -151,7 +151,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<!-- BEGIN REGISTRATION FORM -->
 	<form class="register-form" action="register" method="post">
 		<h3>Sign Up</h3>
-		<p>
+		<!-- <p>
 			 Enter your personal details below:
 		</p>
 		<div class="form-group">
@@ -160,16 +160,16 @@ License: You must have a valid license purchased only from themeforest(the above
 				<i class="fa fa-font"></i>
 				<input class="form-control placeholder-no-fix" type="text" placeholder="Full Name" name="fullname"/>
 			</div>
-		</div>
-		<div class="form-group">
+		</div> -->
+		<!-- <div class="form-group"> -->
 			<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-			<label class="control-label visible-ie8 visible-ie9">Email</label>
+			<!-- <label class="control-label visible-ie8 visible-ie9">Email</label>
 			<div class="input-icon">
 				<i class="fa fa-envelope"></i>
 				<input class="form-control placeholder-no-fix" type="text" placeholder="Email" name="email"/>
 			</div>
-		</div>
-		<div class="form-group">
+		</div> -->
+		<!-- <div class="form-group">
 			<label class="control-label visible-ie8 visible-ie9">Address</label>
 			<div class="input-icon">
 				<i class="fa fa-check"></i>
@@ -182,8 +182,8 @@ License: You must have a valid license purchased only from themeforest(the above
 				<i class="fa fa-location-arrow"></i>
 				<input class="form-control placeholder-no-fix" type="text" placeholder="City/Town" name="city"/>
 			</div>
-		</div>
-		<div class="form-group">
+		</div> -->
+		<!-- <div class="form-group">
 			<label class="control-label visible-ie8 visible-ie9">Country</label>
 			<select name="country" id="select2_sample4" class="select2 form-control">
 				<option value=""></option>
@@ -423,7 +423,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				<option value="ZM">Zambia</option>
 				<option value="ZW">Zimbabwe</option>
 			</select>
-		</div>
+		</div> -->
 		<p>
 			 Enter your account details below:
 		</p>
