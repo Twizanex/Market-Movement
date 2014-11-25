@@ -13,6 +13,12 @@
 
 Route::get('/', function()
 {
+	// $users = DB::table('user')->get();
+
+	// foreach ($users as $user)
+	// {
+	//     var_dump($user->name);
+	// }
 	return View::make('admin3.index');
 });
 
@@ -57,23 +63,15 @@ Route::get('login', function()
 
 Route::post('login_verify', function()
 {
-	$user = DB::table('users')->where('name', $_REQUEST['username'])->first();
-	$user_pw = DB::table('users_pw')->where('UID', $user->UID)->first();
-	if( $user_pw->password == $_REQUEST['password'])
-		return Redirect::to('stock');
-	else
-		return Redirect::to('login');
+	//$data = Session::all();
+	//var_dump($data);
+	var_dump($_REQUEST);
+	//echo 'what';
 });
 
 Route::post('register', function()
 {
-	//var_dump($_REQUEST);
-	DB::insert('insert into users (name, email, join_date) values (?, ?, ?)', array($_REQUEST['username'], $_REQUEST['email'], date("Y-m-d")));
-	$user = DB::table('users')->where('name', $_REQUEST['username'])->first();
-	//var_dump($user);
-	DB::insert('insert into users_pw (UID, password) values (?, ?)', array( $user->UID, $_REQUEST['password']));
-
-	return Redirect::to('login');
+	var_dump($_REQUEST);
 });
 
 Route::get('demo', function()
