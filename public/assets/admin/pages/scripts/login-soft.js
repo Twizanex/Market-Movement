@@ -157,10 +157,10 @@ var Login = function () {
 	                // fullname: {
 	                //     required: true
 	                // },
-	                // email: {
-	                //     required: true,
-	                //     email: true
-	                // },
+	                email: {
+	                    required: true,
+	                    email: true
+	                },
 	                // address: {
 	                //     required: true
 	                // },
