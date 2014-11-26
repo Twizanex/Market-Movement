@@ -154,22 +154,26 @@ var Layout = function () {
     // Handles main menu on window resize
     var handleMainMenuOnResize = function() {
         // handle hover dropdown menu for desktop devices only
-        if (Metronic.getViewPort().width >= 992) {
+        var width = Metronic.getViewPort().width;
+        var menu = $(".page-header-menu");
+            
+        if (width >= 992 && menu.data('breakpoint') !== 'desktop') { 
+            menu.data('breakpoint', 'desktop');
             $('.hor-menu [data-hover="megamenu-dropdown"]').not('.hover-initialized').each(function() {   
                 $(this).dropdownHover(); 
                 $(this).addClass('hover-initialized'); 
             });
             $('.hor-menu .navbar-nav li.open').removeClass('open');
             $(".page-header-menu").css("display", "block").removeClass('page-header-menu-opened');
-        } else {
-            $(".page-header-menu").css("display", "none");
+        } else if (width < 992 && menu.data('breakpoint') !== 'mobile') {
+            menu.data('breakpoint', 'mobile');
             // disable hover bootstrap dropdowns plugin
             $('.hor-menu [data-hover="megamenu-dropdown"].hover-initialized').each(function() {   
                 $(this).unbind('hover');
                 $(this).parent().unbind('hover').find('.dropdown-submenu').each(function() {
                     $(this).unbind('hover');
                 });
-                $(this).removeClass('hover-initialized'); 
+                $(this).removeClass('hover-initialized');    
             });
         }
     };

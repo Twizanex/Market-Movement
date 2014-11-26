@@ -2174,6 +2174,13 @@ Morris Charts
   margin-left: -20px;
   margin-bottom: -15px;
 }
+.portlet-body-morris-fit > svg {
+  -webkit-border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  -ms-border-radius: 0 0 4px 4px;
+  -o-border-radius: 0 0 4px 4px;
+  border-radius: 0 0 4px 4px;
+}
 
 .morris-hover.morris-default-style .morris-hover-row-label {
   text-align: left;

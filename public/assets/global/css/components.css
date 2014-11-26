@@ -3711,10 +3711,12 @@ Portlets
 .portlet > .portlet-title > .tools > a.expand {
   background-image: url(../img/portlet-expand-icon.png);
   width: 14px;
+  visibility: visible;
 }
 .portlet > .portlet-title > .tools > a.collapse {
   background-image: url(../img/portlet-collapse-icon.png);
   width: 14px;
+  visibility: visible;
 }
 .portlet > .portlet-title > .tools > a.fullscreen {
   display: inline-block;
@@ -3980,7 +3982,7 @@ Portlets
 }
 
 /* jQuery UI Draggable Portlets */
-.portlet-sortable > .portlet-title {
+.portlet-sortable:not(.portlet-fullscreen) > .portlet-title {
   cursor: move;
 }
 
@@ -4499,7 +4501,7 @@ Default table
 .table > tfoot > tr.active > td,
 .table > tfoot > tr.active > th {
   background: #a6c8e6;
-  color: #2c5285;
+  color: #c5d5ec;
 }
 
 .table-hover > tbody > tr > td.active:hover,
