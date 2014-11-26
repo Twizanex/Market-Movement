@@ -5,16 +5,6 @@
 	</li>
 	<li class="active">
 		Dashboard
-		<?php
-		$users = DB::table('user')->get();
-
-		foreach ($users as $user)
-		{
-		    var_dump($user->name);
-		}
-		?>
-		<h1>KKKKKKKKKKKKKKKK</h1>
-		
 	</li>
 </ul>
 <!-- END PAGE BREADCRUMB -->
@@ -23,7 +13,7 @@
 	<div class="note note-success note-bordered">
 		<h3>Meet Metronic AngularJS Version! <span class="close" data-close="note"></span></h3>
 		<p>
-			99999AngularJS version of Metronic gives an extremely fast browsing experience to users. 
+			AngularJS version of Metronic gives an extremely fast browsing experience to users. 
 			It uses lazy loading of dependency resources(modules, controllers, templates, jquery plugins, javascripts and even css files) on demand.
 			UI-Router is used for flexible routing with nested views. UI Bootstrap enables using all Bootstrap framework components 
 			with pure AngularJS directives.
@@ -335,7 +325,7 @@
 									</div>
 									<div class="task-config">
 										<div class="task-config-btn btn-group">
-											<a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+											<a class="btn btn-xs default" href="javascript:;" dropdown-menu-toggle dropdown-menu-hover data-close-others="true">
 											<i class="fa fa-cog"></i><i class="fa fa-angle-down"></i>
 											</a>
 											<ul class="dropdown-menu pull-right">
@@ -366,7 +356,7 @@
 									</div>
 									<div class="task-config">
 										<div class="task-config-btn btn-group">
-											<a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+											<a class="btn btn-xs default" href="javascript:;" dropdown-menu-toggle dropdown-menu-hover data-close-others="true">
 											<i class="fa fa-cog"></i><i class="fa fa-angle-down"></i>
 											</a>
 											<ul class="dropdown-menu pull-right">
@@ -400,7 +390,7 @@
 									</div>
 									<div class="task-config">
 										<div class="task-config-btn btn-group">
-											<a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+											<a class="btn btn-xs default" href="javascript:;" dropdown-menu-toggle dropdown-menu-hover data-close-others="true">
 											<i class="fa fa-cog"></i><i class="fa fa-angle-down"></i>
 											</a>
 											<ul class="dropdown-menu pull-right">
@@ -431,7 +421,7 @@
 									</div>
 									<div class="task-config">
 										<div class="task-config-btn btn-group">
-											<a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+											<a class="btn btn-xs default" href="javascript:;" dropdown-menu-toggle dropdown-menu-hover data-close-others="true">
 											<i class="fa fa-cog"></i><i class="fa fa-angle-down"></i>
 											</a>
 											<ul class="dropdown-menu pull-right">
@@ -462,7 +452,7 @@
 									</div>
 									<div class="task-config">
 										<div class="task-config-btn btn-group">
-											<a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+											<a class="btn btn-xs default" href="javascript:;" dropdown-menu-toggle dropdown-menu-hover data-close-others="true">
 											<i class="fa fa-cog"></i><i class="fa fa-angle-down"></i>
 											</a>
 											<ul class="dropdown-menu pull-right">
@@ -493,7 +483,7 @@
 									</div>
 									<div class="task-config">
 										<div class="task-config-btn btn-group">
-											<a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+											<a class="btn btn-xs default" href="javascript:;" dropdown-menu-toggle dropdown-menu-hover data-close-others="true">
 											<i class="fa fa-cog"></i><i class="fa fa-angle-down"></i>
 											</a>
 											<ul class="dropdown-menu pull-right">
@@ -527,7 +517,7 @@
 									</div>
 									<div class="task-config">
 										<div class="task-config-btn btn-group">
-											<a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+											<a class="btn btn-xs default" href="javascript:;" dropdown-menu-toggle dropdown-menu-hover data-close-others="true">
 											<i class="fa fa-cog"></i><i class="fa fa-angle-down"></i>
 											</a>
 											<ul class="dropdown-menu pull-right">
@@ -561,7 +551,7 @@
 									</div>
 									<div class="task-config">
 										<div class="task-config-btn btn-group">
-											<a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+											<a class="btn btn-xs default" href="javascript:;" dropdown-menu-toggle dropdown-menu-hover data-close-others="true">
 											<i class="fa fa-cog"></i><i class="fa fa-angle-down"></i>
 											</a>
 											<ul class="dropdown-menu pull-right">
@@ -592,7 +582,7 @@
 									</div>
 									<div class="task-config">
 										<div class="task-config-btn btn-group">
-											<a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+											<a class="btn btn-xs default" href="javascript:;" dropdown-menu-toggle dropdown-menu-hover data-close-others="true">
 											<i class="fa fa-cog"></i><i class="fa fa-angle-down"></i>
 											</a>
 											<ul class="dropdown-menu pull-right">
@@ -1290,7 +1280,7 @@
 					</div>
 					<div class="actions">
 						<div class="btn-group">
-							<a class="btn btn-sm btn-default btn-circle" href="#" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+							<a class="btn btn-sm btn-default btn-circle" href="#" dropdown-menu-toggle dropdown-menu-hover data-close-others="true">
 							Filter By <i class="fa fa-angle-down"></i>
 							</a>
 							<div class="dropdown-menu hold-on-click dropdown-checkboxes pull-right">

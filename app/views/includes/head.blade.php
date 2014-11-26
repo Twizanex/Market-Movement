@@ -15,7 +15,8 @@
 <link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
 <!-- END GLOBAL MANDATORY STYLES -->
 <!-- BEGIN THEME STYLES -->
-<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css">
+<link href="../../assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
+<!-- <link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"> -->
 <link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css">
 <link href="../../assets/admin/layout3/css/layout.css" rel="stylesheet" type="text/css">
 <link href="../../assets/admin/layout3/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
