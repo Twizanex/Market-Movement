@@ -72,16 +72,22 @@
 							<thead>
 							<tr>
 								<th>
-									 Username
+									 UID
 								</th>
 								<th>
-									 Full Name
+									 Name
 								</th>
 								<th>
-									 Points
+									 Password
 								</th>
 								<th>
-									 Notes
+									 Email
+								</th>
+								<th>
+									 Join Date
+								</th>
+								<th>
+									 Last Active
 								</th>
 								<th>
 									 Edit
@@ -102,7 +108,13 @@
 								<td>
 									 1234
 								</td>
-								<td class="center">
+								<td>
+									 power user
+								</td>
+								<td>
+									 power user
+								</td>
+								<td>
 									 power user
 								</td>
 								<td>
@@ -135,95 +147,7 @@
 									<a class="delete" href="javascript:;">
 									Delete </a>
 								</td>
-							</tr>
-							<tr>
-								<td>
-									 nick12
-								</td>
-								<td>
-									 Nick Roberts
-								</td>
-								<td>
-									 232
-								</td>
-								<td class="center">
-									 power user
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 goldweb
-								</td>
-								<td>
-									 Sergio Jackson
-								</td>
-								<td>
-									 132
-								</td>
-								<td class="center">
-									 elite user
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 webriver
-								</td>
-								<td>
-									 Antonio Sanches
-								</td>
-								<td>
-									 462
-								</td>
-								<td class="center">
-									 new user
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 gist124
-								</td>
-								<td>
-									 Nick Roberts
-								</td>
-								<td>
-									 62
-								</td>
-								<td class="center">
-									 new user
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
+							</tr> 
 							</tbody>
 							</table>
 						</div>
