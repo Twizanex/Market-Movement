@@ -15,7 +15,14 @@ Route::get('/', function()
 {
 	if (Session::has('uid'))
 	{
-		return View::make('page.stock');
+		if( $user_role->role == 'user')
+		{
+			return Redirect::to('stock');
+		}
+		else if ($user_role->role == 'admin')
+		{
+			return Redirect::to('watchlist_edit');
+		}
 	}
 
 	return View::make('page.login');
@@ -67,10 +74,20 @@ Route::post('login_verify', function()
 	if( $user_pw->password == $_REQUEST['password'])
 	{
 		Session::put('uid', $user->UID);
-		return Redirect::to('stock');
 	}
 	else
 		return Redirect::to('login');
+
+	$user_role = DB::table('users_role')->where('id_role', $user->role)->first();
+
+	if( $user_role->role == 'user')
+	{
+		return Redirect::to('stock');
+	}
+	else if ($user_role->role == 'admin')
+	{
+		return Redirect::to('watchlist_edit');
+	}
 });
 
 Route::get('logout', function()
