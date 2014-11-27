@@ -13,7 +13,12 @@
 
 Route::get('/', function()
 {
-	return View::make('admin3.index');
+	if (Session::has('uid'))
+	{
+		return View::make('page.stock');
+	}
+
+	return View::make('page.login');
 });
 
 Route::get('dashboard', function()
@@ -60,9 +65,18 @@ Route::post('login_verify', function()
 	$user = DB::table('users')->where('name', $_REQUEST['username'])->first();
 	$user_pw = DB::table('users_pw')->where('UID', $user->UID)->first();
 	if( $user_pw->password == $_REQUEST['password'])
+	{
+		Session::put('uid', $user->UID);
 		return Redirect::to('stock');
+	}
 	else
 		return Redirect::to('login');
+});
+
+Route::get('logout', function()
+{
+	Session::flush();
+	return View::make('page.login');
 });
 
 Route::post('register', function()
