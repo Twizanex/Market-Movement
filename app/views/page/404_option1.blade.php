@@ -4,6 +4,12 @@
 	404 Page
 @stop
 
+@section('link')
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link href="../../assets/admin/pages/css/error.css" rel="stylesheet" type="text/css"/>
+<!-- END PAGE LEVEL STYLES -->
+@stop
+
 @section('content')
 <!-- BEGIN PAGE CONTENT INNER -->
 			<div class="row">
@@ -34,3 +40,16 @@
 			<!-- END PAGE CONTENT INNER -->
 @stop
 
+@section('script')
+<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="../../assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
+<script src="../../assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
+<script>
+jQuery(document).ready(function() {    
+   Metronic.init(); // init metronic core components
+Layout.init(); // init current layout
+Demo.init(); // init demo features
+});
+</script>
+<!-- END JAVASCRIPTS -->
+@stop
