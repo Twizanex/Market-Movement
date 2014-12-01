@@ -127,19 +127,3 @@ Route::get('users', function()
     return View::make('layouts/users');
 });
 
-
-Route::get('admin3h', function()
-{
-    return Redirect::to('admin3/index.html');
-});
-
-Route::get('admin3js', function()
-{
-    return View::make('admin3/angularjs/index');
-});
-
-Route::get('ecommerce_index', function()
-{
-    return View::make('admin3/ecommerce_index');
-});
-
