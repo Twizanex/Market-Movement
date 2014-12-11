@@ -21,11 +21,7 @@
 <!-- BEGIN PAGE CONTENT INNER -->
 			<div class="row">
 				<div class="col-md-12">
-					<div class="note note-success note-bordered">
-						<p>
-							 Please try to re-size your browser window in order to see the tables in responsive mode.
-						</p>
-					</div>
+					
 					<!-- BEGIN SAMPLE TABLE PORTLET-->
 					<div class="portlet light">
 						<div class="portlet-title">
