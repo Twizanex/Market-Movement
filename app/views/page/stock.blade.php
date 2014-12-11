@@ -79,22 +79,27 @@
 							</thead>
 							<tbody>
 							<?php
+
+								$UID = Session::get('uid', 'default');
+
 								$data = DB::table('list_data')->get();
 
 								foreach ($data as $row)
 								{
-									echo '<tr>';
-									echo '<td class="code">'.$row->stock.'</td>';
-									echo '<td></td>';
-									echo '<td class="numeric">0</td>';
-									echo '<td class="numeric">0</td>';
-									echo '<td class="numeric">0</td>';
-									echo '<td class="numeric">0</td>';
-									echo '<td class="numeric">0</td>';
-									echo '<td class="numeric">0</td>';
-									echo '<td class="numeric">0</td>';
-									echo '</tr>';
-
+									if( $UID == $row->UID)
+									{
+										echo '<tr>';
+										echo '<td class="code">'.$row->stock.'</td>';
+										echo '<td></td>';
+										echo '<td class="numeric">0</td>';
+										echo '<td class="numeric">0</td>';
+										echo '<td class="numeric">0</td>';
+										echo '<td class="numeric">0</td>';
+										echo '<td class="numeric">0</td>';
+										echo '<td class="numeric">0</td>';
+										echo '<td class="numeric">0</td>';
+										echo '</tr>';
+									}
 								}
 							?>
 							</tbody>
