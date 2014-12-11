@@ -13,15 +13,20 @@
 
 Route::get('/', function()
 {
+
 	if (Session::has('uid'))
 	{
+		$uid = Session::get('uid', 'default');
+		$user = DB::table('users')->where('UID', $uid)->first();
+		$user_role = DB::table('users_role')->where('id_role', $user->role)->first();
+
 		if( $user_role->role == 'user')
 		{
 			return Redirect::to('stock');
 		}
 		else if ($user_role->role == 'admin')
 		{
-			return Redirect::to('watchlist_edit');
+			return Redirect::to('user_edit');
 		}
 	}
 
@@ -52,14 +57,37 @@ Route::get('stock', function()
 	return View::make('page.stock');
 });
 
+Route::get('watchlist_edit', function()
+{
+	return View::make('page.watchlist_edit');
+});
+
 Route::get('watchlist', function()
 {
 	return View::make('page.watchlist');
 });
 
-Route::get('watchlist_edit', function()
+
+Route::get('user_edit', function()
 {
-	return View::make('page.watchlist_edit');
+
+	if (Session::has('uid'))
+	{
+		$uid = Session::get('uid', 'default');
+		$user = DB::table('users')->where('UID', $uid)->first();
+		$user_role = DB::table('users_role')->where('id_role', $user->role)->first();
+
+		if( $user_role->role == 'user')
+		{
+			return View::make('page.login');
+		}
+		else if ($user_role->role == 'admin')
+		{
+			return View::make('page.user_edit');
+		}
+	}
+
+	return View::make('page.login');
 });
 
 Route::get('login', function()
@@ -86,7 +114,7 @@ Route::post('login_verify', function()
 	}
 	else if ($user_role->role == 'admin')
 	{
-		return Redirect::to('watchlist_edit');
+		return Redirect::to('user_edit');
 	}
 });
 
