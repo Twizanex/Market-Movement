@@ -117,11 +117,6 @@ Route::get('first', function()
 	return View::make('layouts.first');
 });
 
-Route::get('hello', function()
-{
-	return View::make('layouts.hello');
-});
-
 Route::get('users', function()
 {
     return View::make('layouts/users');
