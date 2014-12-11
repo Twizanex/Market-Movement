@@ -98,56 +98,38 @@
 							</tr>
 							</thead>
 							<tbody>
-							<tr>
-								<td>
-									 alex
-								</td>
-								<td>
-									 Alex Nilson
-								</td>
-								<td>
-									 1234
-								</td>
-								<td>
-									 power user
-								</td>
-								<td>
-									 power user
-								</td>
-								<td>
-									 power user
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									 lisa
-								</td>
-								<td>
-									 Lisa Wong
-								</td>
-								<td>
-									 434
-								</td>
-								<td class="center">
-									 new user
-								</td>
-								<td>
-									<a class="edit" href="javascript:;">
-									Edit </a>
-								</td>
-								<td>
-									<a class="delete" href="javascript:;">
-									Delete </a>
-								</td>
-							</tr> 
+							<?php
+
+								//$results = DB::select('select * from users_pw where UID = 1', array(2));
+
+								$data = DB::table('users')->get();
+
+								foreach ($data as $row)
+								{
+									if( $row->role != 9)
+									{
+										$pass = DB::table('users_pw')->where('UID', $row->UID)->first();
+
+										echo '<tr>';
+										echo '<td>'.$row->UID.'</td>';
+										echo '<td>'.$row->name.'</td>';
+										echo '<td>'.$pass->password.'</td>';
+										echo '<td>'.$row->email.'</td>';
+										echo '<td>'.$row->join_date.'</td>';
+										echo '<td>'.$row->last_active.'</td>';
+										echo '<td>
+												<a class="edit" href="javascript:;">
+												Edit </a>
+											  </td>';
+										echo '<<td>
+												<a class="delete" href="javascript:;">
+												Delete </a>
+											  </td>';
+										echo '</tr>';
+									}
+								}
+							?>
+							
 							</tbody>
 							</table>
 						</div>
