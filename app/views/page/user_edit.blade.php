@@ -120,7 +120,7 @@
 								
 							<?php
 
-								$results = DB::select('select * from users_pw where UID = 1', array(2));
+								//$results = DB::select('select * from users_pw where UID = 1', array(2));
 
 								$data = DB::table('users')->get();
 

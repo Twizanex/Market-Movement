@@ -16,38 +16,21 @@ var TableEditable = function () {
         function editRow(oTable, nRow) {
             var aData = oTable.fnGetData(nRow);
             var jqTds = $('>td', nRow);
-            //jqTds[0].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[0] + '">';
-            jqTds[1].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[1] + '">';
-            jqTds[2].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[2] + '">';
-            jqTds[3].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[3] + '">';
-            jqTds[4].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[4] + '">';
-            jqTds[5].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[5] + '">';
-            jqTds[6].innerHTML = '<a class="edit" href="">Save</a>';
-            jqTds[7].innerHTML = '<a class="cancel" href="">Cancel</a>';
+            jqTds[0].innerHTML = '<input type="text" class="form-control input-small" value="' + aData[0] + '">';
+            jqTds[1].innerHTML = '<a class="edit" href="">Save</a> | <a class="cancel" href="">Cancel</a>';
         }
 
         function saveRow(oTable, nRow) {
             var jqInputs = $('input', nRow);
-            //oTable.fnUpdate(jqInputs[0].value, nRow, 0, false);
-            oTable.fnUpdate(jqInputs[0].value, nRow, 1, false);
-            oTable.fnUpdate(jqInputs[1].value, nRow, 2, false);
-            oTable.fnUpdate(jqInputs[2].value, nRow, 3, false);
-            oTable.fnUpdate(jqInputs[3].value, nRow, 4, false);
-            oTable.fnUpdate(jqInputs[4].value, nRow, 5, false);
-            oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 6, false);
-            oTable.fnUpdate('<a class="delete" href="">Delete</a>', nRow, 7, false);
+            oTable.fnUpdate(jqInputs[0].value, nRow, 0, false);
+            oTable.fnUpdate('<a class="delete" href="">Delete</a>', nRow, 1, false);
             oTable.fnDraw();
         }
 
         function cancelEditRow(oTable, nRow) {
             var jqInputs = $('input', nRow);
             oTable.fnUpdate(jqInputs[0].value, nRow, 0, false);
-            oTable.fnUpdate(jqInputs[1].value, nRow, 1, false);
-            oTable.fnUpdate(jqInputs[2].value, nRow, 2, false);
-            oTable.fnUpdate(jqInputs[3].value, nRow, 3, false);
-            oTable.fnUpdate(jqInputs[4].value, nRow, 4, false);
-            oTable.fnUpdate(jqInputs[5].value, nRow, 5, false);
-            oTable.fnUpdate('<a class="edit" href="">Edit</a>', nRow, 6, false);
+            oTable.fnUpdate('<a class="delete" href="">Delete</a>', nRow, 1, false);
             oTable.fnDraw();
         }
 
@@ -110,7 +93,7 @@ var TableEditable = function () {
                 }
             }
 
-            var aiNew = oTable.fnAddData(['', '', '', '', '', '', '', '']);
+            var aiNew = oTable.fnAddData(['', '', '']);
             var nRow = oTable.fnGetNodes(aiNew[0]);
             editRow(oTable, nRow);
             nEditing = nRow;
@@ -135,10 +118,11 @@ var TableEditable = function () {
             //console.log( aData );
 
                 $.ajax({
-                    url: "user_update",
+                    url: "stock_update",
                     type: "POST",
                     data:{ 
-                            'uid': aData[0],
+                            'uid': uidFromPage,
+                            'stock': aData[0],
                             'action': 5,
                         },                   
                     success: function()
@@ -180,18 +164,15 @@ var TableEditable = function () {
                 //alert("Updated! Do not forget to do some ajax to sync with backend :) ");
 
                 var aData = oTable.fnGetData(nRow);
-                //console.log( aData );
+                console.log(uidFromPage);
+                console.log( aData );
 
                 $.ajax({
-                    url: "user_update",
+                    url: "stock_update",
                     type: "POST",
                     data:{ 
-                            'uid': aData[0],
-                            'name': aData[1],
-                            'pass': aData[2],
-                            'email': aData[3],
-                            'join_date': aData[4],
-                            'last_active': aData[5],
+                            'uid': uidFromPage,
+                            'stock': aData[0],
                             'action': 1,
                         },                   
                     success: function()

@@ -62,6 +62,36 @@ Route::get('stock_edit', function()
 	return View::make('page.stock_edit');
 });
 
+//Edit Stock
+Route::post('stock_update', function()
+{
+	if($_REQUEST['action'] == 1)
+	{
+		if($_REQUEST['uid'] != null)
+		{
+			$num = DB::table('list_data')->where('UID', $_REQUEST['uid'])->where('stock', $_REQUEST['stock'])->count();
+
+			if ($num == 0)
+				DB::insert('insert into list_data (stock, UID) values (?, ?)', array($_REQUEST['stock'], $_REQUEST['uid']));
+		}
+	}
+	else
+	if($_REQUEST['action'] == 5)
+	{
+		DB::table('list_data')->where('UID', $_REQUEST['uid'])->where('stock', $_REQUEST['stock'])
+					->delete();
+	}
+	
+	//Debug
+	// DB::table('users')->where('UID', $_REQUEST['uid'])
+	// 				->update(array('name' => 'trojan', 
+	// 								'email' => 'trojan@usc.edu', 
+	// 								'join_date' => '2014-11-23', 
+	// 								'last_active' => '2014-11-26'
+	// 						));
+
+});
+
 Route::get('watchlist_edit', function()
 {
 	return View::make('page.watchlist_edit');

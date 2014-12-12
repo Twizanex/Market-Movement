@@ -41,7 +41,7 @@
 						<div class="portlet-title">
 							<div class="caption">
 								<i class="fa fa-cogs font-green-sharp"></i>
-								<span class="caption-subject font-green-sharp bold uppercase">Editable Table</span>
+								<span class="caption-subject font-green-sharp bold uppercase">Manage Stock</span>
 							</div>
 							<div class="tools">
 								<a href="javascript:;" class="collapse">
@@ -90,10 +90,7 @@
 							<thead>
 							<tr>
 								<th>
-									 UID
-								</th>
-								<th>
-									 Edit
+									 Stock
 								</th>
 								<th>
 									 Delete
@@ -105,27 +102,17 @@
 								
 							<?php
 
-								$results = DB::select('select * from users_pw where UID = 1', array(2));
+								$data = DB::table('list_data')->get();
 
-								$data = DB::table('users')->get();
+								$uid = Session::get('uid', 'default');
 
 								foreach ($data as $row)
 								{
-									//if( $row->role != 9)
+									if( $row->UID == $uid)
 									{
-										$pass = DB::table('users_pw')->where('UID', $row->UID)->first();
 
 										echo '<tr>';
-										echo '<td>'.$row->UID.'</td>';
-										echo '<td>'.$row->name.'</td>';
-										echo '<td>'.$pass->password.'</td>';
-										echo '<td>'.$row->email.'</td>';
-										echo '<td>'.$row->join_date.'</td>';
-										echo '<td>'.$row->last_active.'</td>';
-										echo '<td>
-												<a class="edit" href="javascript:;">
-												Edit </a>
-											  </td>';
+										echo '<td>'.$row->stock.'</td>';
 										echo '<td>
 												<a class="delete" href="javascript:;">
 												Delete </a>
@@ -165,6 +152,10 @@ Layout.init(); // init current layout
 Demo.init(); // init demo features
    TableEditable.init();
 });
+</script>
+
+<script>
+    var uidFromPage = <?php echo Session::get('uid', 'default'); ?>;
 </script>
 
 @stop
