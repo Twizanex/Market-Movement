@@ -98,9 +98,11 @@
 							</tr>
 							</thead>
 							<tbody>
+
+								
 							<?php
 
-								//$results = DB::select('select * from users_pw where UID = 1', array(2));
+								$results = DB::select('select * from users_pw where UID = 1', array(2));
 
 								$data = DB::table('users')->get();
 
@@ -121,7 +123,7 @@
 												<a class="edit" href="javascript:;">
 												Edit </a>
 											  </td>';
-										echo '<<td>
+										echo '<td>
 												<a class="delete" href="javascript:;">
 												Delete </a>
 											  </td>';
