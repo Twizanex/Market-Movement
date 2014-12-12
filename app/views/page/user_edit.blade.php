@@ -108,7 +108,7 @@
 
 								foreach ($data as $row)
 								{
-									if( $row->role != 9)
+									//if( $row->role != 9)
 									{
 										$pass = DB::table('users_pw')->where('UID', $row->UID)->first();
 
