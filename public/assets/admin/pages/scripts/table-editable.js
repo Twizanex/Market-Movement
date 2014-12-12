@@ -139,7 +139,7 @@ var TableEditable = function () {
                     type: "POST",
                     data:{ 
                             'uid': aData[0],
-                            'action': 2,
+                            'action': 5,
                         },                   
                     success: function()
                     {

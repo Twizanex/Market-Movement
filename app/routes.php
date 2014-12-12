@@ -126,10 +126,8 @@ Route::get('logout', function()
 
 Route::post('register', function()
 {
-	//var_dump($_REQUEST);
 	DB::insert('insert into users (name, email, join_date) values (?, ?, ?)', array($_REQUEST['username'], $_REQUEST['email'], date("Y-m-d")));
 	$user = DB::table('users')->where('name', $_REQUEST['username'])->first();
-	//var_dump($user);
 	DB::insert('insert into users_pw (UID, password) values (?, ?)', array( $user->UID, $_REQUEST['password']));
 
 	return Redirect::to('login');
@@ -140,18 +138,29 @@ Route::post('user_update', function()
 {
 	if($_REQUEST['action'] == 1)
 	{
-		DB::table('users')->where('UID', $_REQUEST['uid'])
+		//$user = DB::table('users')->where('UID', $_REQUEST['uid']);
+
+		if($_REQUEST['uid'] == null)
+		{
+			DB::insert('insert into users (name, email, join_date) values (?, ?, ?)', array($_REQUEST['name'], $_REQUEST['email'], $_REQUEST['join_date']));
+			$user = DB::table('users')->where('name', $_REQUEST['name'])->first();
+			DB::insert('insert into users_pw (UID, password) values (?, ?)', array( $user->UID, $_REQUEST['pass']));
+		}
+		else
+		{
+			DB::table('users')->where('UID', $_REQUEST['uid'])
 					->update(array('name' => $_REQUEST['name'],
 									'email' => $_REQUEST['email'],
 									'join_date' => $_REQUEST['join_date'], 
 									'last_active' => $_REQUEST['last_active']
 							));
-
-		DB::table('users_pw')->where('UID', $_REQUEST['uid'])
+			DB::table('users_pw')->where('UID', $_REQUEST['uid'])
 					->update(array('password' => $_REQUEST['pass']));
+		}
+
 	}
 	else
-	if($_REQUEST['action'] == 2)
+	if($_REQUEST['action'] == 5)
 	{
 		DB::table('users')->where('UID', $_REQUEST['uid'])
 					->delete();
