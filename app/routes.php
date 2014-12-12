@@ -135,6 +135,15 @@ Route::post('register', function()
 	return Redirect::to('login');
 });
 
+//User edit
+Route::post('user_update', function()
+{
+	//DB::insert('insert into list_data (stock) values (?)', array("LC"));
+	var_dump($_POST);
+
+	return true;
+});
+
 Route::get('demo', function()
 {
 	return View::make('page.demo');
