@@ -375,11 +375,47 @@
 			<!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
 			<div class="hor-menu ">
 				<ul class="nav navbar-nav">
-					<li>
-						<a href="stock">Stock</a>
+					<!-- <li>
+						<a href="stock">View Stock</a>
 					</li>
 					<li>
-						<a href="stock">Stock</a>
+						<a href="stock_edit">Edit Stock</a>
+					</li> -->
+					<?php
+						
+						if(Session::has('uid'))
+						{
+							$uid = Session::get('uid', 'default');
+							$user = DB::table('users')->where('UID', $uid)->first();
+
+							if($user->role == 9)
+							{
+								echo '<li>';
+								echo '<a href="user_edit">User Administration</a>';
+								echo '</li>';
+							}
+							else
+							{
+								echo '<li>';
+								echo '<a href="stock">View Stock</a>';
+								echo '</li>';
+								echo '<li>';
+								echo '<a href="stock_edit">Edit Stock</a>';
+								echo '</li>';
+							}
+						}
+						else
+						{
+							echo '<li>';
+							echo '<a href="stock">View Stock</a>';
+							echo '</li>';
+							echo '<li>';
+							echo '<a href="stock_edit">Edit Stock</a>';
+							echo '</li>';
+						}
+					?>
+					<li>
+						<a href="logout">Logout</a>
 					</li>
 				</ul>
 			</div>
@@ -388,4 +424,4 @@
 	</div>
 	<!-- END HEADER MENU -->
 </div>
-<!-- END HEADER -->
+<!-- END HEADER
