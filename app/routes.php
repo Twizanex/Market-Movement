@@ -54,11 +54,21 @@ Route::get('contact', function()
 
 Route::get('stock', function()
 {
+	if (!Session::has('uid'))
+	{
+		return View::make('page.login');
+	}
+	
 	return View::make('page.stock');
 });
 
 Route::get('stock_edit', function()
 {
+	if (!Session::has('uid'))
+	{
+		return View::make('page.login');
+	}
+
 	return View::make('page.stock_edit');
 });
 
