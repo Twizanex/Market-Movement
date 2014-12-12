@@ -65,10 +65,42 @@ License: You must have a valid license purchased only from themeforest(the above
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-				<h4 class="modal-title">Modal Title</h4>
+				<h1 class="modal-title">How to test this site?</h1>
 			</div>
 			<div class="modal-body">
-				Modal body goes here
+				<h3>Background</h3>
+				<p>This site is using a MVC framework Laravel, bootstrap, and MySQL. 
+					There are many files in this project but most of my implementation is on the following files:</p>
+				<ul>
+					<li>app/routes.php</li>
+					<li>app/views/page/login.blade.php</li>
+					<li>app/views/page/stock.blade.php</li>
+					<li>app/views/page/stock_edit.blade.php</li>
+					<li>app/views/page/user_edit.blade.php</li>
+				</ul>
+
+				<p>To test functionalities of this site, you must login first. You can use the following accounts or create your own on the login page.</p>
+				<ul>
+					<li><b>name: admin, password: root</b></li>
+					<li>name: trojan, password: 1234</li>
+					<li>name: tommy, password: 4321</li>
+				</ul>
+				<p>The admin account has different funtionalities, and he can edit, delete, and add users.</p>
+
+				<h3>Highlighted Feature</h3>
+				<ul>
+					<li>The navigation bar will have different items depends on whether users are Admin or normal users.</li>
+					<li>Administrator can edit, delete, and add users.</li>
+					<li>Users can edit, add, remove, stocks on their "Edit Stock" page.  All changes will be reflected on "View Stock" page.</li>
+					<li>On "View Stock" page, all data is fetching from Yahoo Finance on real time.</li>
+					<li>User Registration: Users can create account by clicking the "Create an account" button on login page.</li>
+					<li>Advanced security: Every user has their own set of data and they cannot access other people's data.</li>
+					<li>Advanced security: When users go to a page, it will first check if the users are logged and have enough permission.</li>
+					<li>General design is consistent across site and sections.</li>
+				</ul>
+				<p>The admin account has different funtionalities, and he can edit, delete, and add users.</p>
+				
+				<p>Thanks.</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn default" data-dismiss="modal">Close</button>
