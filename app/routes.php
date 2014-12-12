@@ -14,21 +14,21 @@
 Route::get('/', function()
 {
 
-	if (Session::has('uid'))
-	{
-		$uid = Session::get('uid', 'default');
-		$user = DB::table('users')->where('UID', $uid)->first();
-		$user_role = DB::table('users_role')->where('id_role', $user->role)->first();
+	// if (Session::has('uid'))
+	// {
+	// 	$uid = Session::get('uid', 'default');
+	// 	$user = DB::table('users')->where('UID', $uid)->first();
+	// 	$user_role = DB::table('users_role')->where('id_role', $user->role)->first();
 
-		if( $user_role->role == 'user')
-		{
-			return Redirect::to('stock');
-		}
-		else if ($user_role->role == 'admin')
-		{
-			return Redirect::to('user_edit');
-		}
-	}
+	// 	if( $user_role->role == 'user')
+	// 	{
+	// 		return Redirect::to('stock');
+	// 	}
+	// 	else if ($user_role->role == 'admin')
+	// 	{
+	// 		return Redirect::to('user_edit');
+	// 	}
+	// }
 
 	return View::make('page.login');
 });
