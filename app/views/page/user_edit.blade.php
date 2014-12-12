@@ -8,6 +8,24 @@
 	Welcome Home!
 @stop
 
+@section('username')
+<?php
+	
+	if(Session::has('uid'))
+	{
+		$UID = Session::get('uid', 'default');
+		$data = DB::table('users')->where('UID', $UID)->first();
+
+		if( $UID == $data->UID)
+		{
+			echo $data->name;
+		}
+	}
+	else
+		echo "Trojan";
+?>
+@stop
+
 @section('link')
 <!-- BEGIN PAGE LEVEL STYLES -->
 <link rel="stylesheet" type="text/css" href="../../assets/global/plugins/select2/select2.css"/>

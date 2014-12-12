@@ -315,7 +315,7 @@
 					<li class="dropdown dropdown-user dropdown-dark">
 						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 						<img alt="" class="img-circle" src="../../assets/admin/layout3/img/avatar9.jpg">
-						<span class="username username-hide-mobile">Nick</span>
+						<span class="username username-hide-mobile">@yield('username', 'default username')</span>
 						</a>
 						<ul class="dropdown-menu dropdown-menu-default">
 							<li>
