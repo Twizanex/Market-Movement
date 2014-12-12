@@ -138,17 +138,28 @@ Route::post('register', function()
 //User edit
 Route::post('user_update', function()
 {
-	//DB::update('update users set votes = 100 where name = ?', array('John'));
-
-	DB::table('users')->where('UID', $_REQUEST['uid'])
+	if($_REQUEST['action'] == 1)
+	{
+		DB::table('users')->where('UID', $_REQUEST['uid'])
 					->update(array('name' => $_REQUEST['name'],
 									'email' => $_REQUEST['email'],
 									'join_date' => $_REQUEST['join_date'], 
 									'last_active' => $_REQUEST['last_active']
 							));
 
-	DB::table('users_pw')->where('UID', $_REQUEST['uid'])
+		DB::table('users_pw')->where('UID', $_REQUEST['uid'])
 					->update(array('password' => $_REQUEST['pass']));
+	}
+	else
+	if($_REQUEST['action'] == 2)
+	{
+		DB::table('users')->where('UID', $_REQUEST['uid'])
+					->delete();
+
+		DB::table('users_pw')->where('UID', $_REQUEST['uid'])
+					->delete();
+	}
+	
 	//Debug
 	// DB::table('users')->where('UID', $_REQUEST['uid'])
 	// 				->update(array('name' => 'trojan', 

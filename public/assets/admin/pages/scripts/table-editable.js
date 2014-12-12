@@ -125,9 +125,27 @@ var TableEditable = function () {
             }
 
             var nRow = $(this).parents('tr')[0];
-            oTable.fnDeleteRow(nRow);
-            alert("Deleted! Do not forget to do some ajax to sync with backend :)");
 
+            var aData = oTable.fnGetData(nRow);
+
+            oTable.fnDeleteRow(nRow);
+            
+            //alert("Deleted! Do not forget to do some ajax to sync with backend :)");
+            
+            //console.log( aData );
+
+                $.ajax({
+                    url: "user_update",
+                    type: "POST",
+                    data:{ 
+                            'uid': aData[0],
+                            'action': 2,
+                        },                   
+                    success: function()
+                    {
+                        alert("Update successful!!!");                                    
+                    }
+                });
 
         });
 
@@ -158,12 +176,11 @@ var TableEditable = function () {
                 /* Editing this row and want to save it */
                 saveRow(oTable, nEditing);
                 nEditing = null;
-                alert("Updated! Do not forget to do some ajax to sync with backend :) M");
+                
+                //alert("Updated! Do not forget to do some ajax to sync with backend :) ");
 
                 var aData = oTable.fnGetData(nRow);
-                //var jqInputs = $('input', nEditing);
-                // jqInputs[0]
-                console.log( aData );
+                //console.log( aData );
 
                 $.ajax({
                     url: "user_update",
@@ -175,6 +192,7 @@ var TableEditable = function () {
                             'email': aData[3],
                             'join_date': aData[4],
                             'last_active': aData[5],
+                            'action': 1,
                         },                   
                     success: function()
                     {
