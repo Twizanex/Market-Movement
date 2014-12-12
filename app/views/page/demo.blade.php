@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.original')
 
 @section('title')
 	Home
@@ -8,9 +8,19 @@
 	Welcome Home!
 @stop
 
+@section('link')
+<!-- BEGIN PAGE LEVEL PLUGIN STYLES -->
+<link href="../../assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css">
+<link href="../../assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css">
+<!-- END PAGE LEVEL PLUGIN STYLES -->
+<!-- BEGIN PAGE STYLES -->
+<link href="../../assets/admin/pages/css/tasks.css" rel="stylesheet" type="text/css"/>
+<!-- END PAGE STYLES -->
+@stop
 
 @section('content')
-<div class="row margin-top-10">
+<!-- BEGIN PAGE CONTENT INNER -->
+			<div class="row margin-top-10">
 				<div class="col-md-6 col-sm-12">
 					<!-- BEGIN PORTLET-->
 					<div class="portlet light ">
@@ -1455,6 +1465,186 @@
 					</div>
 					<!-- END PORTLET-->
 				</div>
+
+				<div class="col-md-6 col-sm-6">
+						<!-- BEGIN PORTLET-->
+						<div class="portlet light ">
+							<div class="portlet-title">
+								<div class="caption">
+									<i class="icon-bubble font-red-sunglo"></i>
+									<span class="caption-subject font-red-sunglo bold uppercase">Chats</span>
+								</div>
+								<div class="inputs">
+									<div class="portlet-input input-inline input-small">
+										<div class="input-icon right">
+											<i class="icon-magnifier"></i>
+											<input type="text" class="form-control input-circle" placeholder="search...">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="portlet-body" id="chats">
+								<div class="scroller" style="height: 353px;" data-always-visible="1" data-rail-visible1="1">
+									<ul class="chats">
+										<li class="in">
+											<img class="avatar" alt="" src="../../assets/admin/layout2/img/avatar1.jpg"/>
+											<div class="message">
+												<span class="arrow">
+												</span>
+												<a href="#" class="name">
+												Bob Nilson </a>
+												<span class="datetime">
+												at 20:09 </span>
+												<span class="body">
+												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+											</div>
+										</li>
+										<li class="out">
+											<img class="avatar" alt="" src="../../assets/admin/layout2/img/avatar2.jpg"/>
+											<div class="message">
+												<span class="arrow">
+												</span>
+												<a href="#" class="name">
+												Lisa Wong </a>
+												<span class="datetime">
+												at 20:11 </span>
+												<span class="body">
+												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+											</div>
+										</li>
+										<li class="in">
+											<img class="avatar" alt="" src="../../assets/admin/layout2/img/avatar1.jpg"/>
+											<div class="message">
+												<span class="arrow">
+												</span>
+												<a href="#" class="name">
+												Bob Nilson </a>
+												<span class="datetime">
+												at 20:30 </span>
+												<span class="body">
+												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+											</div>
+										</li>
+										<li class="out">
+											<img class="avatar" alt="" src="../../assets/admin/layout2/img/avatar3.jpg"/>
+											<div class="message">
+												<span class="arrow">
+												</span>
+												<a href="#" class="name">
+												Richard Doe </a>
+												<span class="datetime">
+												at 20:33 </span>
+												<span class="body">
+												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+											</div>
+										</li>
+										<li class="in">
+											<img class="avatar" alt="" src="../../assets/admin/layout2/img/avatar3.jpg"/>
+											<div class="message">
+												<span class="arrow">
+												</span>
+												<a href="#" class="name">
+												Richard Doe </a>
+												<span class="datetime">
+												at 20:35 </span>
+												<span class="body">
+												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+											</div>
+										</li>
+										<li class="out">
+											<img class="avatar" alt="" src="../../assets/admin/layout2/img/avatar1.jpg"/>
+											<div class="message">
+												<span class="arrow">
+												</span>
+												<a href="#" class="name">
+												Bob Nilson </a>
+												<span class="datetime">
+												at 20:40 </span>
+												<span class="body">
+												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+											</div>
+										</li>
+										<li class="in">
+											<img class="avatar" alt="" src="../../assets/admin/layout2/img/avatar3.jpg"/>
+											<div class="message">
+												<span class="arrow">
+												</span>
+												<a href="#" class="name">
+												Richard Doe </a>
+												<span class="datetime">
+												at 20:40 </span>
+												<span class="body">
+												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </span>
+											</div>
+										</li>
+										<li class="out">
+											<img class="avatar" alt="" src="../../assets/admin/layout2/img/avatar1.jpg"/>
+											<div class="message">
+												<span class="arrow">
+												</span>
+												<a href="#" class="name">
+												Bob Nilson </a>
+												<span class="datetime">
+												at 20:54 </span>
+												<span class="body">
+												Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. sed diam nonummy nibh euismod tincidunt ut laoreet. </span>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="chat-form">
+									<div class="input-cont">
+										<input class="form-control" type="text" placeholder="Type a message here..."/>
+									</div>
+									<div class="btn-cont">
+										<span class="arrow">
+										</span>
+										<a href="" class="btn blue icn-only">
+										<i class="fa fa-check icon-white"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- END PORTLET-->
+					</div>
+
 			</div>
+			<!-- END PAGE CONTENT INNER -->
 @stop
 
+
+@section('script')
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script src="../../assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
+<!-- IMPORTANT! fullcalendar depends on jquery-ui-1.10.3.custom.min.js for drag & drop support -->
+<script src="../../assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="../../assets/admin/layout3/scripts/layout.js" type="text/javascript"></script>
+<script src="../../assets/admin/layout3/scripts/demo.js" type="text/javascript"></script>
+<script src="../../assets/admin/pages/scripts/index3.js" type="text/javascript"></script>
+<script src="../../assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL SCRIPTS -->
+<script>
+jQuery(document).ready(function() {    
+   Metronic.init(); // init metronic core componets
+   Layout.init(); // init layout
+   Demo.init(); // init demo(theme settings page)
+   Index.init(); // init index page
+   Tasks.initDashboardWidget(); // init tash dashboard widget
+
+   Index.initChat();
+});
+</script>
+<!-- END JAVASCRIPTS -->
+@stop
