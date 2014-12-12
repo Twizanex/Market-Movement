@@ -138,10 +138,40 @@ Route::post('register', function()
 //User edit
 Route::post('user_update', function()
 {
-	//DB::insert('insert into list_data (stock) values (?)', array("LC"));
-	var_dump($_POST);
+	//DB::update('update users set votes = 100 where name = ?', array('John'));
 
-	return true;
+	DB::table('users')->where('UID', $_REQUEST['uid'])
+					->update(array('name' => $_REQUEST['name'],
+									'email' => $_REQUEST['email'],
+									'join_date' => $_REQUEST['join_date'], 
+									'last_active' => $_REQUEST['last_active']
+							));
+
+	DB::table('users_pw')->where('UID', $_REQUEST['uid'])
+					->update(array('password' => $_REQUEST['pass']));
+	//Debug
+	// DB::table('users')->where('UID', $_REQUEST['uid'])
+	// 				->update(array('name' => 'trojan', 
+	// 								'email' => 'trojan@usc.edu', 
+	// 								'join_date' => '2014-11-23', 
+	// 								'last_active' => '2014-11-26'
+	// 						));
+
+	//DB::insert('insert into list_data (stock) values (?)', array("LC"));
+	//var_dump($_POST);
+});
+
+//User edit -- Debug Only
+Route::get('user_update', function()
+{
+	DB::table('users')->where('UID', 1)
+					->update(array('name' => 'trojan', 
+									'email' => 'trojan@usc.edu', 
+									'join_date' => '2014-11-23', 
+									'last_active' => '2014-11-26'
+							));
+
+	return Redirect::to('login');
 });
 
 Route::get('demo', function()
