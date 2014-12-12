@@ -57,6 +57,11 @@ Route::get('stock', function()
 	return View::make('page.stock');
 });
 
+Route::get('stock_edit', function()
+{
+	return View::make('page.stock_edit');
+});
+
 Route::get('watchlist_edit', function()
 {
 	return View::make('page.watchlist_edit');
